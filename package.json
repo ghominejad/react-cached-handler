@@ -1,0 +1,31 @@
+{
+  "name": "react-cached-handler",
+  "version": "1.0.0",
+  "description": "A tiny library that passes parameters to your event handlers using arrow functions without impacting rendering performance of components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ghominejad/react-cached-handler.git"
+  },
+  "keywords": [
+    "react",
+    "fast",
+    "event",
+    "handler",
+    "rendering",
+    "performance",
+    "anonymouse",
+    "arrow",
+    "function",
+    "binding"
+  ],
+  "author": "Hassan Ghominejad",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ghominejad/react-cached-handler/issues"
+  },
+  "homepage": "https://github.com/ghominejad/react-cached-handler#readme"
+}

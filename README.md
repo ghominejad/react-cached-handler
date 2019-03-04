@@ -1,5 +1,5 @@
 # react-cached-handler
-`react-cached-handler` is a tiny library that passes parameters to your event handlers using arrow functions without impacting rendering performance of components
+`react-cached-handler` is a tiny library that passes parameters to your event handlers using arrow functions without impacting **rendering performance** of components
 
 ### Features
 - Named handlers
@@ -8,6 +8,13 @@
 - Component rendering performace
 - Custom context for handlers
 
+## Download
+[![Npm version](https://img.shields.io/npm/v/react-cached-handler.svg)](https://www.npmjs.com/package/react-cached-handler)
+
+### Package Installation
+```
+$ npm install react-cached-handler
+```
 
 ### How to use it?
 You define a handler by calling `createHandler`. The first parameter is the context of your handler function that is optional

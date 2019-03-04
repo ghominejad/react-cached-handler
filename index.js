@@ -1,4 +1,4 @@
-class FastHandler {
+class CachedHandler {
 
     constructor(context, defaultHandler) {
         this.defaultHandler = defaultHandler
@@ -36,6 +36,6 @@ class FastHandler {
 
 
 module.exports = function (context, defaultHandler) {
-    var fastHandler = new FastHandler(context, defaultHandler);
-    return fastHandler.handler.bind(fastHandler);
+    var cachedHandler = new CachedHandler(context, defaultHandler);
+    return cachedHandler.handler.bind(cachedHandler);
 }

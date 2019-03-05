@@ -43,6 +43,7 @@ onBlur={this.handler('title', 'a1', 'a2', (fieldName, p1, p2, event)=> { console
 `EditPost` Component that handles named events via a default handler function
 
 ```JAVASCRIPT
+import createHandler from 'react-cached-handler';
 
 class EditPost extends React.PureComponent {
 
@@ -74,9 +75,11 @@ class EditPost extends React.PureComponent {
         </div>
     }
 }
-
+```
 
 - You could also override the default handler function
+
+```JAVASCRIPT
             <TextField
                 label="Post Content"
                 onBlur={this.handler('postContent', (fieldName, e) => { console.log('from custom handler function')} )}

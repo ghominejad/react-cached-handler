@@ -165,8 +165,7 @@ nameChangeHandler = createHandler();
 .
 .
 
-<TextInput key={post.id}
-    onChange={this.nameChangeHandler((e)=> {
+<TextField onChange={this.nameChangeHandler((e)=> {
         console.log(e.target.value);
     })}
 />

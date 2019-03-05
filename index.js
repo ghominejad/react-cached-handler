@@ -6,14 +6,14 @@ class CachedHandler {
         this.handlers = {};
     }
 
-    handler(key,  ...args) {
+    handler(key, ...args) {
 
         let customHandler = args[args.length-1];
         
         if (typeof customHandler !== "function") {
             customHandler = undefined;
             
-            if (args.length === 0 && typeof key === "function") {
+            if (args.length === 0 && (typeof key === "function" || key === undefined)) {
                 customHandler = key;
                 key = "default";
             }
@@ -42,6 +42,11 @@ class CachedHandler {
 
 
 module.exports = function (context, defaultHandler) {
+    if (typeof context === "function" && !defaultHandler) {
+        defaultHandler = context;
+        context = undefined;
+    }
+    
     var cachedHandler = new CachedHandler(context, defaultHandler);
     return cachedHandler.handler.bind(cachedHandler);
 }

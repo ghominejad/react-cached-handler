@@ -165,9 +165,22 @@ nameChangeHandler = createHandler();
 .
 .
 
-<TextField onChange={this.nameChangeHandler((e)=> {
+<TextField onChange={this.firstNameChangeHandler(e => {
         console.log(e.target.value);
     })}
 />
 ```
 
+Or 
+
+```JAVASCRIPT
+firstNameChangeHandler = createHandler(e => {
+    console.log(e.target.value);
+});
+
+.
+.
+
+<TextField onChange={this.firstNameChangeHandler()}
+/>
+```

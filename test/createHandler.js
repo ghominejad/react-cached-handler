@@ -89,8 +89,26 @@ describe('createHandler', function() {
 
       });
 
+
+
     });
 
+    it('should wotk with default handler as the first argument if the context isn\'t specified', function() {
+        
+      var called = false;
 
+      var cachedHandler = createHandler(e => { 
+        assert.equal(e.target.value, 'the value');
+        called  = true;
+      });
+    
+      
+      var eventHandler = cachedHandler();
+
+      eventHandler({target:{value : 'the value'}});
+      
+      assert.ok(called);
+
+    });
 
   });

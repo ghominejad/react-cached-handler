@@ -152,3 +152,23 @@ handlePostClick = (postId, title, author, e) => {
     onClick={this.handler(post.id, post.Title, post.Author, this.handlePostClick)}
 />
 ```
+
+
+
+#### Example 5
+It's ok if you don't assign the key. It uses 'default' for the key
+
+
+```JAVASCRIPT
+nameChangeHandler = createHandler();
+
+.
+.
+
+<TextInput key={post.id}
+    onChange={this.nameChangeHandler((e)=> {
+        console.log(e.target.value);
+    })}
+/>
+```
+

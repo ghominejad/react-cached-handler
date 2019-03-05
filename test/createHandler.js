@@ -71,6 +71,23 @@ describe('createHandler', function() {
 
       });
 
+      it('should use default key if the key isn\'t set', function() {
+        
+       
+        var cachedHandler = createHandler();
+      
+        var called = false;
+        
+        var eventHandler = cachedHandler(function (e) { 
+          assert.equal(e.target.value, 'the value');
+          called  = true;
+        });
+
+        eventHandler({target:{value : 'the value'}});
+        
+        assert.ok(called);
+
+      });
 
     });
 

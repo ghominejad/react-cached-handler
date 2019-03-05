@@ -12,14 +12,23 @@ class CachedHandler {
         
         if (typeof customHandler !== "function") {
             customHandler = undefined;
+            
+            if (args.length === 0 && typeof key === "function") {
+                customHandler = key;
+                key = "default";
+            }
+
         } else {
             args.pop(); // remove the last argument
         }
 
+        if(key !== 'default') {
+            args = [key, ...args];
+        }
         const theHandler =  customHandler || this.defaultHandler;
 
         if (!this.handlers[key]) {
-            this.handlers[key] = theHandler.bind(this.context, key, ...args)
+            this.handlers[key] = theHandler.bind(this.context, ...args)
         }
 
         return this.handlers[key];

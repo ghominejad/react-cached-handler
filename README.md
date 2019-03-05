@@ -47,7 +47,7 @@ import createHandler from 'react-cached-handler';
 
 class EditPost extends React.PureComponent {
 
-    handler = createHandler(this, (fieldName, e) => { console.log(e.target.value) } );
+    handler = createHandler((fieldName, e) => { console.log(e.target.value) } );
 
     render() {
         return <div>
@@ -95,8 +95,8 @@ import createHandler from 'react-cached-handler';
 
 class PostMenu extends React.PureComponent {
 
-    postSelectHandler = createHandler(this);
-    tagSelectHandler = createHandler(this);
+    postSelectHandler = createHandler();
+    tagSelectHandler = createHandler();
 
     render() {
         return <div>

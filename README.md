@@ -160,7 +160,7 @@ It's ok if you don't assign the key. It uses 'default' for the key
 
 
 ```JAVASCRIPT
-nameChangeHandler = createHandler();
+firstNameChangeHandler = createHandler();
 
 .
 .

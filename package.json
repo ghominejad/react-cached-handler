@@ -4,7 +4,7 @@
   "description": "A tiny library that passes parameters to your event handlers using arrow functions without impacting rendering performance of components",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -27,5 +27,8 @@
   "bugs": {
     "url": "https://github.com/ghominejad/react-cached-handler/issues"
   },
-  "homepage": "https://github.com/ghominejad/react-cached-handler#readme"
+  "homepage": "https://github.com/ghominejad/react-cached-handler#readme",
+  "devDependencies": {
+    "mocha": "^6.0.2"
+  }
 }

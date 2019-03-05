@@ -6,22 +6,20 @@ class CachedHandler {
         this.handlers = {};
     }
 
-    handler(key, customHandler) {
+    handler(key,  ...args) {
 
-        let skipParams = 1;
-        let handler = this.defaultHandler;
-
-        if (typeof customHandler === "function") { 
-            // it's not using `defaultHandler`, we need to ignore the `func` param
-            skipParams++;
-            handler = customHandler;
+        let customHandler = args[args.length-1];
+        
+        if (typeof customHandler !== "function") {
+            customHandler = undefined;
         } else {
-            handler = this.defaultHandler;
+            args.pop(); // remove the last argument
         }
 
+        const theHandler =  customHandler || this.defaultHandler;
+
         if (!this.handlers[key]) {
-            this.handlers[key] = handler.bind(this.context, key, 
-                ...(Array.prototype.splice.call(arguments, skipParams)))
+            this.handlers[key] = theHandler.bind(this.context, key, ...args)
         }
 
         return this.handlers[key];
@@ -32,7 +30,6 @@ class CachedHandler {
         this.handlers = null
     }
 }
-
 
 
 module.exports = function (context, defaultHandler) {

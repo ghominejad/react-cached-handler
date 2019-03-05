@@ -132,7 +132,7 @@ handlePostClick = (postId, title, author) => {
 .
 
 <Post key={post.id}
-    onClick={this.handler(post.id, this.handlePostClick, post.Title, post.Author)}
+    onClick={this.handler(post.id, post.Title, post.Author, this.handlePostClick)}
 />
 ```
 
@@ -149,6 +149,6 @@ handlePostClick = (postId, title, author, e) => {
 .
 
 <Post key={post.id}
-    onClick={this.handler(post.id, this.handlePostClick, post.Title, post.Author)}
+    onClick={this.handler(post.id, post.Title, post.Author, this.handlePostClick)}
 />
 ```

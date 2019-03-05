@@ -1,6 +1,6 @@
 {
   "name": "react-cached-handler",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A tiny library that passes parameters to your event handlers using arrow functions without impacting rendering performance of components",
   "main": "index.js",
   "scripts": {
